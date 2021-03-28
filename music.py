@@ -1,5 +1,6 @@
 from microbit import *
 import music
+import random
 
 
 TOLERANCE = 3000
@@ -37,6 +38,7 @@ list_of_songs = [twinkle_twinkle, music.FUNERAL, music.DADADADUM, music.BIRTHDAY
 music.PRELUDE, music.BLUES, music.PYTHON, music.NYAN]
 
 while True:
+    display.show(Image.MUSIC_QUAVER)
     wait_for_shake()
     music.stop()
-    music.play(list_of_songs[random(len(list_of_songs))], wait=False)
+    music.play(list_of_songs[random.randint(0, len(list_of_songs)-1)], wait=False)
