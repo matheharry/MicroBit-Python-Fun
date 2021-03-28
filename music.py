@@ -4,6 +4,7 @@ import random
 
 
 TOLERANCE = 3000
+nummer=0
 
 
 def get_accelerometer_total():
@@ -38,7 +39,9 @@ list_of_songs = [twinkle_twinkle, music.FUNERAL, music.DADADADUM, music.BIRTHDAY
 music.PRELUDE, music.BLUES, music.PYTHON, music.NYAN]
 
 while True:
-    display.show(Image.MUSIC_QUAVER)
+    # display.show(Image.MUSIC_QUAVER)
+    display.show(nummer)
     wait_for_shake()
     music.stop()
-    music.play(list_of_songs[random.randint(0, len(list_of_songs)-1)], wait=False)
+    nummer = random.randint(0, len(list_of_songs)-1)
+    music.play(list_of_songs[nummer], wait=False)
